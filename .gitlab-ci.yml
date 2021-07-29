@@ -1,0 +1,18 @@
+stages:
+  - build
+  - test1
+  - test2
+
+build-code-job:
+  stage: build
+  script:
+    - echo "build test"
+test-code-job:
+  stage: test1
+  script:
+    - echo "if the files are built successfully, test files with one command"
+Build a container image:
+  stage: test2
+  script:
+    - docker build -t sample-image:latest .
+
